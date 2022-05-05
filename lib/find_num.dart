@@ -1,5 +1,5 @@
 class FindNum {
-  List<num> findNumsIn(String string) {
+  List<num> findNums(String string) {
     final List<String> words = string.split(" ");
     List<num> numsList = [];
 

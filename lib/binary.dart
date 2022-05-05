@@ -1,6 +1,6 @@
 import 'dart:math';
 
-class binary {
+class Binary {
 
   String intToBinary(int number) {
     const divider = 2;

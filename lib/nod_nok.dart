@@ -1,8 +1,5 @@
-import 'main.dart';
-import 'package:flutter/material.dart';
-import 'package:Dart_basics/resultPage.dart';
 
-class nodNok {
+class NodNok {
 
   int nod(int nodNokFirstNum, int nodNokSecondNum) {
     while (nodNokSecondNum != 0) {

@@ -1,7 +1,5 @@
 import 'dart:math';
-import 'package:flutter/material.dart';
-import 'package:Dart_basics/main.dart';
-import 'resultPage.dart';
+
 
 class Point {
   final double x;

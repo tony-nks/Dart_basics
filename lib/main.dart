@@ -1,9 +1,8 @@
-import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 
-import 'package:Dart_basics/resultPage.dart';
+import 'package:dart_basics/result_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -55,15 +54,15 @@ class StartHomeState extends State<StartHome> {
   @override
   Widget build(BuildContext context) {
     var timeNow = DateTime.now().hour;
-    String Hello = (' ');
+    String hello = (' ');
     if ((timeNow <= 12 && timeNow >= 8)) {
-      Hello = ('Доброго утра Куратор!');
+      hello = ('Доброго утра Куратор!');
     } else if ((timeNow > 12) && (timeNow <= 16)) {
-      Hello = ('Доброго дня Куратор!');
+      hello = ('Доброго дня Куратор!');
     } else if ((timeNow > 16) && (timeNow < 20)) {
-      Hello = ('Доброго вечера Куратор!');
+      hello = ('Доброго вечера Куратор!');
     } else {
-      Hello = ('Доброй ночи Куратор!');
+      hello = ('Доброй ночи Куратор!');
     }
 
 
@@ -106,7 +105,7 @@ class StartHomeState extends State<StartHome> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      Hello,
+                      hello,
                       style: const TextStyle(
                           fontSize: 25,
                           fontWeight: FontWeight.w900,
@@ -123,6 +122,7 @@ class StartHomeState extends State<StartHome> {
                 ),
               ],
             ),
+            Expanded( child:
             Container(
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -256,7 +256,7 @@ class StartHomeState extends State<StartHome> {
                 ),
               ),
             ),
-
+            ),
             //resultPage(),
           ],
         ),
@@ -264,10 +264,10 @@ class StartHomeState extends State<StartHome> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           if(formKey.currentState!.validate()){
-            Route route = MaterialPageRoute(builder: (context) => const resultPage());
+            Route route = MaterialPageRoute(builder: (context) => const ResultPage());
             Navigator.push(context, route);
           }
-          //resultPage.dart();
+          //result_page.dart();
         },
         child: const Icon(Icons.find_replace_sharp),
       ),
@@ -279,24 +279,4 @@ class StartHomeState extends State<StartHome> {
     return _valNum.hasMatch(input);
   }
 
-}
-
-void yessss (context){
-
-
-
-}
-
-class inputPage extends StatefulWidget {
-  const inputPage({Key? key}) : super(key: key);
-
-  @override
-  State<inputPage> createState() => _inputPageState();
-}
-
-class _inputPageState extends State<inputPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
 }

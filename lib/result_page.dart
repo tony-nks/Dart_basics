@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
 import 'dart:math';
-import 'package:Dart_basics/nod_nok.dart';
-import 'package:Dart_basics/binary.dart';
-import 'package:Dart_basics/findNum.dart';
-import 'package:Dart_basics/point.dart';
-import 'package:Dart_basics/user.dart';
+import 'package:dart_basics/nod_nok.dart';
+import 'package:dart_basics/binary.dart';
+import 'package:dart_basics/find_num.dart';
+import 'package:dart_basics/point.dart';
+import 'package:dart_basics/user.dart';
 
-class resultPage extends StatelessWidget {
-  const resultPage({Key? key}) : super(key: key);
+class ResultPage extends StatelessWidget {
+  const ResultPage({Key? key}) : super(key: key);
 
 
 
@@ -16,20 +16,20 @@ class resultPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFD4E7FE),
+      backgroundColor: const Color(0xFFD4E7FE),
       body: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
-          Text(
+          const Text(
             'Результаты всех вычислений',
             style: TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.w900,
                 color: Color(0XFF343E87)),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Container(
@@ -43,7 +43,7 @@ class resultPage extends StatelessWidget {
                 scrollDirection: Axis.vertical,
                 shrinkWrap: true,
                 children: [
-                  Text(
+                  const Text(
                     '          Задание 1 (Указанными вами значениями)',
                     style: TextStyle(
                         fontSize: 15,
@@ -51,7 +51,7 @@ class resultPage extends StatelessWidget {
                         color: Colors.green),
                   ),
                   buildContainerResultsNods(context),
-                  Text(
+                  const Text(
                     '          Задание 2 (Указанными вами значениями)',
                     style: TextStyle(
                         fontSize: 15,
@@ -59,7 +59,7 @@ class resultPage extends StatelessWidget {
                         color: Colors.green),
                   ),
                   buildContainerResultsBinary(context),
-                  Text(
+                  const Text(
                     '          Задание 3 (Значения были указаны в коде)',
                     style: TextStyle(
                         fontSize: 15,
@@ -67,7 +67,7 @@ class resultPage extends StatelessWidget {
                         color: Color(0XFF343E87)),
                   ),
                   buildContainerResultsFindNum(context),
-                  Text(
+                  const Text(
                     '          Задание 4 (Значения были указаны в коде)',
                     style: TextStyle(
                         fontSize: 15,
@@ -75,7 +75,7 @@ class resultPage extends StatelessWidget {
                         color: Color(0XFF343E87)),
                   ),
                   buildContainerResultsFindString(context),
-                  Text(
+                  const Text(
                     '          Задание 5 (Значения были указаны в коде)',
                     style: TextStyle(
                         fontSize: 15,
@@ -83,7 +83,7 @@ class resultPage extends StatelessWidget {
                         color: Color(0XFF343E87)),
                   ),
                   buildContainerResultsNoRepetitions(context),
-                  Text(
+                  const Text(
                     '          Задание 6 (Значения были указаны в коде)',
                     style: TextStyle(
                         fontSize: 15,
@@ -91,7 +91,7 @@ class resultPage extends StatelessWidget {
                         color: Color(0XFF343E87)),
                   ),
                   buildContainerResultsDistance(context),
-                  Text(
+                  const Text(
                     '          Задание 7 (Указанными вами значениями)',
                     style: TextStyle(
                         fontSize: 15,
@@ -99,7 +99,7 @@ class resultPage extends StatelessWidget {
                         color: Colors.green),
                   ),
                   buildContainerResultsKoren(context),
-                  Text(
+                  const Text(
                     '          Задание 8 (Значения были указаны в коде)',
                     style: TextStyle(
                         fontSize: 15,
@@ -119,23 +119,23 @@ class resultPage extends StatelessWidget {
   Container buildContainerResultsNods(context) {
     var nodNokFirstNum = int.parse(nodNokFirstNumController.text);
     var nodNokSecondNum = int.parse(nodNokSecondNumController.text);
-    var calculator = nodNok();
+    var calculator = NodNok();
     var noda =
     ('НОД чисел ($nodNokFirstNum, $nodNokSecondNum) = ${calculator.nod(nodNokFirstNum, nodNokSecondNum)}');
     var noka =
     ('НОК чисел ($nodNokFirstNum, $nodNokSecondNum) = ${calculator.nok(nodNokFirstNum, nodNokSecondNum)}');
     return Container(
-      margin: EdgeInsets.all(15),
-      padding: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(15),
+      padding: const EdgeInsets.all(10),
       height: 100,
       decoration: BoxDecoration(
-          color: Color(0xFFF9FFB), borderRadius: BorderRadius.circular(30)),
+          color: const Color(0x0fff9ffb), borderRadius: BorderRadius.circular(30)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: const [
               Text(
                 'НОД',
                 style: TextStyle(fontWeight: FontWeight.bold),
@@ -158,16 +158,14 @@ class resultPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
+              SizedBox(
                 width: MediaQuery.of(context).size.width - 160,
                 child: Text(
-                  '$noda',
+                  noda,
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
-              Container(
-                child: Text('$noka'),
-              ),
+              Text(noka),
             ],
           )
         ],
@@ -177,18 +175,18 @@ class resultPage extends StatelessWidget {
 
   Container buildContainerResultsBinary(context) {
     var binaryNum = int.parse(binaryNumControlled.text);
-    var result = binary();
+    var result = Binary();
     String resultBinaryText =
     ('$binaryNum в двоичной системе = ${result.intToBinary(binaryNum)}');
-    int binaryNum2 = int.parse('${result.intToBinary(binaryNum)}');
+    var binaryNum2 = int.parse(result.intToBinary(binaryNum));
     String resultBinaryToIntText =
     ('$binaryNum2 в десятичной системе = $binaryNum');
     return Container(
-      margin: EdgeInsets.all(15),
-      padding: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(15),
+      padding: const EdgeInsets.all(10),
       height: 100,
       decoration: BoxDecoration(
-          color: Color(0xFFF9FFB), borderRadius: BorderRadius.circular(30)),
+          color: const Color(0x0fff9ffb), borderRadius: BorderRadius.circular(30)),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -196,7 +194,7 @@ class resultPage extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: const [
               Text(
                 'В двоичной',
                 style: TextStyle(fontWeight: FontWeight.bold),
@@ -219,16 +217,14 @@ class resultPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
+              SizedBox(
                 width: MediaQuery.of(context).size.width - 160,
                 child: Text(
-                  '$resultBinaryText',
+                  resultBinaryText,
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
-              Container(
-                child: Text('$resultBinaryToIntText'),
-              ),
+              Text(resultBinaryToIntText),
             ],
           )
         ],
@@ -240,20 +236,20 @@ class resultPage extends StatelessWidget {
     var string = 'word 1 3 word 2 word 4321 21111 word';
 
     var res = FindNum();
-    String result = ('  ${res.findNumsIn(string)}');
+    String result = ('  ${res.findNums(string)}');
 
     return Container(
-      margin: EdgeInsets.all(15),
-      padding: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(15),
+      padding: const EdgeInsets.all(10),
       height: 100,
       decoration: BoxDecoration(
-          color: Color(0xFFF9FFB), borderRadius: BorderRadius.circular(30)),
+          color: const Color(0x0fff9ffb), borderRadius: BorderRadius.circular(30)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: const [
               Text(
                 'Числа в строке: ',
                 style: TextStyle(fontWeight: FontWeight.bold),
@@ -269,10 +265,10 @@ class resultPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
+              SizedBox(
                 width: MediaQuery.of(context).size.width - 160,
                 child: Text(
-                  '$result',
+                  result,
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
@@ -289,17 +285,17 @@ class resultPage extends StatelessWidget {
     String result = (' ${text.findStringsIn(wordsList)}');
 
     return Container(
-      margin: EdgeInsets.all(15),
-      padding: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(15),
+      padding: const EdgeInsets.all(10),
       height: 100,
       decoration: BoxDecoration(
-          color: Color(0xFFF9FFB), borderRadius: BorderRadius.circular(30)),
+          color: const Color(0x0fff9ffb), borderRadius: BorderRadius.circular(30)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: const [
               Text(
                 'Вхождения \nслов \nв коллекцию: ',
                 style: TextStyle(fontWeight: FontWeight.bold),
@@ -315,10 +311,10 @@ class resultPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
+              SizedBox(
                 width: MediaQuery.of(context).size.width - 160,
                 child: Text(
-                  '$result',
+                  result,
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
@@ -335,17 +331,17 @@ class resultPage extends StatelessWidget {
     String result = (' ${text.findNumNamesIn(wordsList)}');
 
     return Container(
-      margin: EdgeInsets.all(15),
-      padding: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(15),
+      padding: const EdgeInsets.all(10),
       height: 100,
       decoration: BoxDecoration(
-          color: Color(0xFFF9FFB), borderRadius: BorderRadius.circular(30)),
+          color: const Color(0x0fff9ffb), borderRadius: BorderRadius.circular(30)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: const [
               Text(
                 'Цифры без \nповторений \nв коллекции: ',
                 style: TextStyle(fontWeight: FontWeight.bold),
@@ -361,10 +357,10 @@ class resultPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
+              SizedBox(
                 width: MediaQuery.of(context).size.width - 160,
                 child: Text(
-                  '$result',
+                  result,
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
@@ -380,17 +376,17 @@ class resultPage extends StatelessWidget {
     String pointResult = (' ${point.distanceTo(Point(1, 2, 3))}');
 
     return Container(
-      margin: EdgeInsets.all(15),
-      padding: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(15),
+      padding: const EdgeInsets.all(10),
       height: 100,
       decoration: BoxDecoration(
-          color: Color(0xFFF9FFB), borderRadius: BorderRadius.circular(30)),
+          color: const Color(0x0fff9ffb), borderRadius: BorderRadius.circular(30)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: const [
               Text(
                 'Расстояние \nмежду \nточками: ',
                 style: TextStyle(fontWeight: FontWeight.bold),
@@ -406,10 +402,10 @@ class resultPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
+              SizedBox(
                 width: MediaQuery.of(context).size.width - 160,
                 child: Text(
-                  '$pointResult',
+                  pointResult,
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
@@ -425,17 +421,17 @@ class resultPage extends StatelessWidget {
     var korChisla = int.parse(korenChisla.text);
     final answer = pow(chisloKor, 1 / korChisla);
     return Container(
-      margin: EdgeInsets.all(15),
-      padding: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(15),
+      padding: const EdgeInsets.all(10),
       height: 100,
       decoration: BoxDecoration(
-          color: Color(0xFFF9FFB), borderRadius: BorderRadius.circular(30)),
+          color: const Color(0x0fff9ffb), borderRadius: BorderRadius.circular(30)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: const [
               Text(
                 'Корень: ',
                 style: TextStyle(fontWeight: FontWeight.bold),
@@ -451,7 +447,7 @@ class resultPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
+              SizedBox(
                 width: MediaQuery.of(context).size.width - 160,
                 child: Text(
                   'Число $chisloKor из под корня $korChisla \nровняется = $answer ',
@@ -488,21 +484,18 @@ class resultPage extends StatelessWidget {
 
     String userResults = ('${userManager.getEmails()}');
 
-    var chisloKor = int.parse(chisloKornya.text);
-    var korChisla = int.parse(korenChisla.text);
-    final answer = pow(chisloKor, 1 / korChisla);
     return Container(
-      margin: EdgeInsets.all(15),
-      padding: EdgeInsets.all(10),
+      margin: const EdgeInsets.all(15),
+      padding: const EdgeInsets.all(10),
       height: 100,
       decoration: BoxDecoration(
-          color: Color(0xFFF9FFB), borderRadius: BorderRadius.circular(30)),
+          color: const Color(0x0fff9ffb), borderRadius: BorderRadius.circular(30)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children: const [
               Text(
                 'Список \nадресов \nэл. почты:',
                 style: TextStyle(fontWeight: FontWeight.bold),
@@ -518,7 +511,7 @@ class resultPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
+              SizedBox(
                 width: MediaQuery.of(context).size.width - 160,
                 child: Text(
                   userResults,
