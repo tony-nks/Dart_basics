@@ -10,9 +10,6 @@ import 'package:dart_basics/user.dart';
 class ResultPage extends StatelessWidget {
   const ResultPage({Key? key}) : super(key: key);
 
-
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -121,15 +118,16 @@ class ResultPage extends StatelessWidget {
     var nodNokSecondNum = int.parse(nodNokSecondNumController.text);
     var calculator = NodNok();
     var noda =
-    ('НОД чисел ($nodNokFirstNum, $nodNokSecondNum) = ${calculator.nod(nodNokFirstNum, nodNokSecondNum)}');
+        ('НОД чисел ($nodNokFirstNum, $nodNokSecondNum) = ${calculator.nod(nodNokFirstNum, nodNokSecondNum)}');
     var noka =
-    ('НОК чисел ($nodNokFirstNum, $nodNokSecondNum) = ${calculator.nok(nodNokFirstNum, nodNokSecondNum)}');
+        ('НОК чисел ($nodNokFirstNum, $nodNokSecondNum) = ${calculator.nok(nodNokFirstNum, nodNokSecondNum)}');
     return Container(
       margin: const EdgeInsets.all(15),
       padding: const EdgeInsets.all(10),
       height: 100,
       decoration: BoxDecoration(
-          color: const Color(0x0fff9ffb), borderRadius: BorderRadius.circular(30)),
+          color: const Color(0x0fff9ffb),
+          borderRadius: BorderRadius.circular(30)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -177,16 +175,17 @@ class ResultPage extends StatelessWidget {
     var binaryNum = int.parse(binaryNumControlled.text);
     var result = Binary();
     String resultBinaryText =
-    ('$binaryNum в двоичной системе = ${result.intToBinary(binaryNum)}');
+        ('$binaryNum в двоичной системе = ${result.intToBinary(binaryNum)}');
     var binaryNum2 = int.parse(result.intToBinary(binaryNum));
     String resultBinaryToIntText =
-    ('$binaryNum2 в десятичной системе = $binaryNum');
+        ('$binaryNum2 в десятичной системе = $binaryNum');
     return Container(
       margin: const EdgeInsets.all(15),
       padding: const EdgeInsets.all(10),
       height: 100,
       decoration: BoxDecoration(
-          color: const Color(0x0fff9ffb), borderRadius: BorderRadius.circular(30)),
+          color: const Color(0x0fff9ffb),
+          borderRadius: BorderRadius.circular(30)),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -243,7 +242,8 @@ class ResultPage extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       height: 100,
       decoration: BoxDecoration(
-          color: const Color(0x0fff9ffb), borderRadius: BorderRadius.circular(30)),
+          color: const Color(0x0fff9ffb),
+          borderRadius: BorderRadius.circular(30)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -289,7 +289,8 @@ class ResultPage extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       height: 100,
       decoration: BoxDecoration(
-          color: const Color(0x0fff9ffb), borderRadius: BorderRadius.circular(30)),
+          color: const Color(0x0fff9ffb),
+          borderRadius: BorderRadius.circular(30)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -335,7 +336,8 @@ class ResultPage extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       height: 100,
       decoration: BoxDecoration(
-          color: const Color(0x0fff9ffb), borderRadius: BorderRadius.circular(30)),
+          color: const Color(0x0fff9ffb),
+          borderRadius: BorderRadius.circular(30)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -380,7 +382,8 @@ class ResultPage extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       height: 100,
       decoration: BoxDecoration(
-          color: const Color(0x0fff9ffb), borderRadius: BorderRadius.circular(30)),
+          color: const Color(0x0fff9ffb),
+          borderRadius: BorderRadius.circular(30)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -425,7 +428,8 @@ class ResultPage extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       height: 100,
       decoration: BoxDecoration(
-          color: const Color(0x0fff9ffb), borderRadius: BorderRadius.circular(30)),
+          color: const Color(0x0fff9ffb),
+          borderRadius: BorderRadius.circular(30)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -462,7 +466,6 @@ class ResultPage extends StatelessWidget {
   }
 
   Container buildContainerResultsUsers(context) {
-
     var userManager = UserManager<User>();
 
     final userA = User('a@a.ru');
@@ -489,7 +492,8 @@ class ResultPage extends StatelessWidget {
       padding: const EdgeInsets.all(10),
       height: 100,
       decoration: BoxDecoration(
-          color: const Color(0x0fff9ffb), borderRadius: BorderRadius.circular(30)),
+          color: const Color(0x0fff9ffb),
+          borderRadius: BorderRadius.circular(30)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -524,7 +528,4 @@ class ResultPage extends StatelessWidget {
       ),
     );
   }
-
-
-
 }

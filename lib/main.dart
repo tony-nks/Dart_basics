@@ -8,6 +8,9 @@ void main() {
   runApp(const MyApp());
 }
 
+
+
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -35,6 +38,8 @@ final binaryNumControlled = TextEditingController();
 final chisloKornya = TextEditingController();
 final korenChisla = TextEditingController();
 
+
+
 @override
 void dispose(){
   nodNokFirstNumController.dispose();
@@ -46,15 +51,14 @@ void dispose(){
   //super.dispose();
 }
 
+String hello = (' ');
 class StartHomeState extends State<StartHome> {
 
-
-
-
   @override
-  Widget build(BuildContext context) {
+  void initState() {
+    super.initState();
     var timeNow = DateTime.now().hour;
-    String hello = (' ');
+
     if ((timeNow <= 12 && timeNow >= 8)) {
       hello = ('Доброго утра Куратор!');
     } else if ((timeNow > 12) && (timeNow <= 16)) {
@@ -63,7 +67,13 @@ class StartHomeState extends State<StartHome> {
       hello = ('Доброго вечера Куратор!');
     } else {
       hello = ('Доброй ночи Куратор!');
-    }
+    };
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+
 
 
 
