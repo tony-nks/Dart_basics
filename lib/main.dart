@@ -51,7 +51,7 @@ void dispose(){
   //super.dispose();
 }
 
-String hello = (' ');
+String hello = ('  ');
 class StartHomeState extends State<StartHome> {
 
   @override
